@@ -1,105 +1,134 @@
-# Spring Boot JWT Authentication example with Spring Security & Spring Data JPA
+# 📦 SpringAppInventory
 
-## User Registration, User Login and Authorization process.
-The diagram shows flow of how we implement User Registration, User Login and Authorization process.
+<p align="center">
+  <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT" />
+  <img src="https://img.shields.io/badge/Java-100%25-blue" alt="Main Language" />
+  <img src="https://img.shields.io/badge/status-active-brightgreen" alt="Status" />
+</p>
 
-![spring-boot-jwt-authentication-spring-security-flow](spring-boot-jwt-authentication-spring-security-flow.png)
+---
 
-## Spring Boot Server Architecture with Spring Security
-You can have an overview of our Spring Boot Server with the diagram below:
+## ✨ Overview
 
-![spring-boot-jwt-authentication-spring-security-architecture](spring-boot-jwt-authentication-spring-security-architecture.png)
+**SpringAppInventory** is an inventory management application built with Spring Boot. This project demonstrates the implementation of CRUD operations, inventory tracking, and best practices in API development using Java.
 
-For more detail, please visit:
-> [Secure Spring Boot App with Spring Security & JWT Authentication](https://bezkoder.com/spring-boot-jwt-authentication/)
+---
 
-> [For MongoDB](https://bezkoder.com/spring-boot-jwt-auth-mongodb/)
+## 🎨 Tech Stack
 
-## Fullstack Authentication
+<div align="center">
 
-> [Spring Boot + Vue.js JWT Authentication](https://bezkoder.com/spring-boot-vue-js-authentication-jwt-spring-security/)
+| Language / Tool                                        | Usage                                     |
+|--------------------------------------------------------|-------------------------------------------|
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="24"/> Java | Main logic for inventory management       |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="24"/> Spring Boot | RESTful API framework                    |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="24"/> GitHub Actions | CI/CD automation (optional)              |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="24"/> Docker | Containerization and deployment (optional) |
 
-> [Spring Boot + Angular 8 JWT Authentication](https://bezkoder.com/angular-spring-boot-jwt-auth/)
+</div>
 
-> [Spring Boot + Angular 10 JWT Authentication](https://bezkoder.com/angular-10-spring-boot-jwt-auth/)
+---
 
-> [Spring Boot + Angular 11 JWT Authentication](https://bezkoder.com/angular-11-spring-boot-jwt-auth/)
+## 🗂️ Project Structure
 
-> [Spring Boot + React JWT Authentication](https://bezkoder.com/spring-boot-react-jwt-auth/)
-
-## Fullstack CRUD App
-
-> [Vue.js + Spring Boot + MySQL/PostgreSQL example](https://bezkoder.com/spring-boot-vue-js-crud-example/)
-
-> [Angular + Spring Boot + MySQL example](https://bezkoder.com/angular-10-spring-boot-crud/)
-
-> [Angular + Spring Boot + PostgreSQL example](https://bezkoder.com/angular-10-spring-boot-postgresql/)
-
-> [React + Spring Boot + MySQL example](https://bezkoder.com/react-spring-boot-crud/)
-
-> [React + Spring Boot + PostgreSQL example](https://bezkoder.com/spring-boot-react-postgresql/)
-
-Run both Back-end & Front-end in one place:
-> [Integrate Angular with Spring Boot Rest API](https://bezkoder.com/integrate-angular-spring-boot/)
-
-> [Integrate React.js with Spring Boot Rest API](https://bezkoder.com/integrate-reactjs-spring-boot/)
-
-## Dependency
-– If you want to use PostgreSQL:
-```xml
-<dependency>
-  <groupId>org.postgresql</groupId>
-  <artifactId>postgresql</artifactId>
-  <scope>runtime</scope>
-</dependency>
+```text
+.
+├── src/main/java/          # Main source code for the API
+├── src/test/java/          # Unit and integration tests
+├── pom.xml                 # Maven dependencies and project config
+├── Dockerfile              # Containerization configuration (optional)
+├── .github/workflows/      # CI/CD pipelines (GitHub Actions, if present)
+└── README.md               # Project documentation
 ```
-– or MySQL:
-```xml
-<dependency>
-  <groupId>mysql</groupId>
-  <artifactId>mysql-connector-java</artifactId>
-  <scope>runtime</scope>
-</dependency>
-```
-## Configure Spring Datasource, JPA, App properties
-Open `src/main/resources/application.properties`
-- For PostgreSQL:
-```
-spring.datasource.url= jdbc:postgresql://localhost:5432/testdb
-spring.datasource.username= postgres
-spring.datasource.password= 123
 
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation= true
-spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.PostgreSQLDialect
+---
 
-# Hibernate ddl auto (create, create-drop, validate, update)
-spring.jpa.hibernate.ddl-auto= update
+## ⚡ Features
 
-# App Properties
-bezkoder.app.jwtSecret= bezKoderSecretKey
-bezkoder.app.jwtExpirationMs= 86400000
-```
-- For MySQL
-```
-spring.datasource.url= jdbc:mysql://localhost:3306/testdb?useSSL=false
-spring.datasource.username= root
-spring.datasource.password= 123456
+- RESTful API for inventory management
+- Full CRUD operations for inventory items
+- Modular, maintainable Java code
+- Optional containerization with Docker
+- Optional CI/CD integration with GitHub Actions
+- Well-documented for learning and experimentation
 
-spring.jpa.properties.hibernate.dialect= org.hibernate.dialect.MySQL5InnoDBDialect
-spring.jpa.hibernate.ddl-auto= update
+---
 
-# App Properties
-bezkoder.app.jwtSecret= bezKoderSecretKey
-bezkoder.app.jwtExpirationMs= 86400000
-```
-## Run Spring Boot application
-```
+## 🛠️ Getting Started
+
+> **Run the application in minutes.**
+
+```bash
+# Clone the repository
+git clone https://github.com/MarSegu/SpringAppInventory.git
+cd SpringAppInventory
+
+# Configure your database credentials in src/main/resources/application.properties
+
+# Build the project
+mvn clean install
+
+# Run the Spring Boot application
 mvn spring-boot:run
+# or
+java -jar target/SpringAppInventory-*.jar
 ```
 
-## Run following SQL insert statements
+---
+
+## ⚙️ Main Configuration
+
+| File / Variable         | Description                            | Example              |
+|------------------------|----------------------------------------|----------------------|
+| `application.properties`| Spring Boot configuration (DB, port)  | DB URL, user, pass   |
+| `pom.xml`              | Maven dependencies and plugins         | `spring-boot-starter-data-jpa`, etc. |
+| `Dockerfile`           | Containerization setup (if present)    | Build Docker image   |
+
+---
+
+## 🧪 Testing
+
+> Run unit and integration tests.
+
+```bash
+mvn test
 ```
-INSERT INTO roles(name) VALUES('ROLE_USER');
-INSERT INTO roles(name) VALUES('ROLE_MODERATOR');
-INSERT INTO roles(name) VALUES('ROLE_ADMIN');
-```
+
+---
+
+## 🚀 Deployment
+
+- **Docker:**
+  ```bash
+  docker build -t springappinventory .
+  docker run -p 8080:8080 springappinventory
+  ```
+- **CI/CD:** Automated via workflows in `.github/workflows/` (if configured).
+
+---
+
+## 📤 Outputs
+
+| Output            | Description                    |
+|-------------------|-------------------------------|
+| `localhost:8080`  | API endpoint in development    |
+| Test results      | Results from automated tests   |
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!  
+Open an issue or pull request for suggestions and improvements.
+
+---
+
+## 📃 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for more details.
+
+---
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=110&section=footer"/>
+</p>
